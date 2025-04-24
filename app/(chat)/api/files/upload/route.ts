@@ -6,15 +6,9 @@ import { auth } from '@/app/(auth)/auth';
 
 // Use Blob instead of File since File is not available in Node.js environment
 const FileSchema = z.object({
-  file: z
-    .instanceof(Blob)
-    .refine((file) => file.size <= 5 * 1024 * 1024, {
-      message: 'File size should be less than 5MB',
-    })
-    // Update the file type based on the kind of files you want to accept
-    .refine((file) => ['image/jpeg', 'image/png'].includes(file.type), {
-      message: 'File type should be JPEG or PNG',
-    }),
+  file: z.instanceof(Blob).refine((file) => file.size <= 5 * 1024 * 1024, {
+    message: 'File size should be less than 5MB',
+  }),
 });
 
 export async function POST(request: Request) {
@@ -57,11 +51,22 @@ export async function POST(request: Request) {
 
       return NextResponse.json(data);
     } catch (error) {
-      return NextResponse.json({ error: 'Upload failed' }, { status: 500 });
+      console.error('Error uploading to blob storage:', error);
+      return NextResponse.json(
+        {
+          error: 'Upload failed',
+          details: error instanceof Error ? error.message : 'Unknown error',
+        },
+        { status: 500 },
+      );
     }
   } catch (error) {
+    console.error('Error processing file upload:', error);
     return NextResponse.json(
-      { error: 'Failed to process request' },
+      {
+        error: 'Failed to process request',
+        details: error instanceof Error ? error.message : 'Unknown error',
+      },
       { status: 500 },
     );
   }
