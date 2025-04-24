@@ -7,6 +7,9 @@ import { toast } from '@/components/toast';
 
 import { AuthForm } from '@/components/auth-form';
 import { SubmitButton } from '@/components/submit-button';
+import { Button } from '@/components/ui/button';
+import { LogoGoogle } from '@/components/icons';
+import { signIn } from 'next-auth/react';
 
 import { login, type LoginActionState } from '../actions';
 
@@ -45,6 +48,17 @@ export default function Page() {
     formAction(formData);
   };
 
+  const handleGoogleLogin = async () => {
+    try {
+      await signIn('google', { callbackUrl: '/' });
+    } catch (error) {
+      toast({
+        type: 'error',
+        description: 'Failed to sign in with Google!',
+      });
+    }
+  };
+
   return (
     <div className="flex h-dvh w-screen items-start pt-12 md:pt-0 md:items-center justify-center bg-background">
       <div className="w-full max-w-md overflow-hidden rounded-2xl flex flex-col gap-12">
@@ -54,19 +68,41 @@ export default function Page() {
             Use your email and password to sign in
           </p>
         </div>
-        <AuthForm action={handleSubmit} defaultEmail={email}>
-          <SubmitButton isSuccessful={isSuccessful}>Sign in</SubmitButton>
-          <p className="text-center text-sm text-gray-600 mt-4 dark:text-zinc-400">
-            {"Don't have an account? "}
-            <Link
-              href="/register"
-              className="font-semibold text-gray-800 hover:underline dark:text-zinc-200"
-            >
-              Sign up
-            </Link>
-            {' for free.'}
-          </p>
-        </AuthForm>
+        <div className="flex flex-col gap-6 px-4 sm:px-16">
+          <Button
+            variant="outline"
+            onClick={handleGoogleLogin}
+            className="w-full"
+          >
+            <LogoGoogle size={16} />
+            <span>Sign in with Google</span>
+          </Button>
+
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-background px-2 text-muted-foreground">
+                Or continue with
+              </span>
+            </div>
+          </div>
+
+          <AuthForm action={handleSubmit} defaultEmail={email}>
+            <SubmitButton isSuccessful={isSuccessful}>Sign in</SubmitButton>
+            <p className="text-center text-sm text-gray-600 mt-4 dark:text-zinc-400">
+              {"Don't have an account? "}
+              <Link
+                href="/register"
+                className="font-semibold text-gray-800 hover:underline dark:text-zinc-200"
+              >
+                Sign up
+              </Link>
+              {' for free.'}
+            </p>
+          </AuthForm>
+        </div>
       </div>
     </div>
   );

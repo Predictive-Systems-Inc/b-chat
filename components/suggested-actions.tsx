@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import { memo } from 'react';
-import { UseChatHelpers } from '@ai-sdk/react';
+import type { UseChatHelpers } from '@ai-sdk/react';
 
 interface SuggestedActionsProps {
   chatId: string;
@@ -13,24 +13,27 @@ interface SuggestedActionsProps {
 function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
   const suggestedActions = [
     {
-      title: 'What are the advantages',
-      label: 'of using Next.js?',
-      action: 'What are the advantages of using Next.js?',
+      title: 'Help me conduct market research',
+      label: 'on demand for security solutions in EMEA',
+      action:
+        'latest market trends and insights on demand for security solutions in EMEA',
     },
     {
-      title: 'Write code to',
-      label: `demonstrate djikstra's algorithm`,
-      action: `Write code to demonstrate djikstra's algorithm`,
+      title: 'Explain our remote work policy',
+      label: 'for employees who are based in the Osaka',
+      action:
+        "Explain our company's remote work policy and provide the key guidelines for employees",
     },
     {
-      title: 'Help me write an essay',
-      label: `about silicon valley`,
-      action: `Help me write an essay about silicon valley`,
+      title: 'Create latest status report',
+      label: 'about the CMIS project',
+      action: 'Draft a professional status report about the CMIS project',
     },
     {
-      title: 'What is the weather',
-      label: 'in San Francisco?',
-      action: 'What is the weather in San Francisco?',
+      title: 'Generate summary of our sales',
+      label: 'for the last 3 months',
+      action:
+        'Generate a summary of our sales for the last 3 months and provide insights on the performance of our sales team',
     },
   ];
 

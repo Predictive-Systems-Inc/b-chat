@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "generatedAt": "2025-04-24T05:54:46.095Z",
+    "tasksAnalyzed": 12,
+    "thresholdScore": 5,
+    "projectName": "Your Project Name",
+    "usedResearch": false
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 4,
+      "taskTitle": "Create user profile management",
+      "complexityScore": 6,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the user profile management task into detailed subtasks covering API endpoint creation, frontend components, profile picture functionality, settings management, and form validation with real-time updates.",
+      "reasoning": "This task involves both backend and frontend work with multiple features (profile CRUD, image handling, settings, validation, real-time updates). Each component has moderate complexity but together they create a medium-complexity task requiring careful coordination."
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "Implement basic chat functionality",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Divide the chat functionality implementation into specific subtasks covering WebSocket server setup, database models, API endpoints, frontend components, and real-time features including typing indicators and error handling.",
+      "reasoning": "Real-time communication adds significant complexity. This task involves WebSocket integration, database design, API development, frontend components, and real-time features. The high priority and foundational nature of this task make it critical to break down properly."
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "Develop chat organization features",
+      "complexityScore": 5,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Create subtasks for chat organization features focusing on database models and API endpoints, frontend components for folders, favorites functionality, and search/filtering capabilities with drag-and-drop support.",
+      "reasoning": "This task builds on the basic chat functionality with organizational features. The complexity comes from implementing search, filtering, and drag-and-drop functionality, but it's more straightforward than the real-time aspects of the base chat system."
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "Implement document upload and storage",
+      "complexityScore": 6,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down document upload and storage implementation into subtasks covering secure storage setup, file upload API with validation, database models, frontend components, and file preview/sharing capabilities.",
+      "reasoning": "This task involves security considerations, file handling, and integration with cloud services. The combination of secure storage, validation (including virus scanning), and preview generation for different file types increases the complexity."
+    },
+    {
+      "taskId": 8,
+      "taskTitle": "Develop document management system",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Create subtasks for the advanced document management system focusing on version control implementation, history retrieval APIs, frontend components for version comparison, permission-based sharing, and document organization with comments and annotations.",
+      "reasoning": "This task extends the basic document functionality with more complex features like versioning, history tracking, and granular permissions. The version comparison and annotation features add significant complexity to both backend and frontend components."
+    },
+    {
+      "taskId": 9,
+      "taskTitle": "Implement basic AI integration",
+      "complexityScore": 6,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Divide the AI integration task into subtasks covering AI service abstraction layer, API endpoints, frontend components for suggestions, and user settings for AI preferences.",
+      "reasoning": "Integrating AI services requires creating abstraction layers and handling asynchronous processing. While labeled 'basic', the integration of language models for suggestions and summarization still presents moderate complexity, especially ensuring good user experience."
+    },
+    {
+      "taskId": 10,
+      "taskTitle": "Develop team management functionality",
+      "complexityScore": 6,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down team management functionality into subtasks covering database models and APIs, team creation UI, role-based permissions, invitation system, and team-specific sharing features.",
+      "reasoning": "This task involves complex permission models and organizational structures. The role-based access control and team-specific functionality add complexity to both data models and business logic implementation."
+    },
+    {
+      "taskId": 11,
+      "taskTitle": "Implement enhanced security features",
+      "complexityScore": 9,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Create detailed subtasks for implementing security features, focusing on end-to-end encryption, two-factor authentication, security settings APIs, frontend security controls, and suspicious activity detection.",
+      "reasoning": "Security features, especially end-to-end encryption, are highly complex and critical. This task requires cryptographic expertise, careful implementation of authentication flows, and comprehensive security monitoring. The high priority indicates its importance to the project."
+    },
+    {
+      "taskId": 12,
+      "taskTitle": "Develop audit and compliance reporting",
+      "complexityScore": 7,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Divide the audit and compliance reporting task into subtasks covering comprehensive logging system, database models and APIs, frontend reporting components, and data retention/export functionality.",
+      "reasoning": "This task requires implementing a robust logging system that captures all relevant user actions without impacting performance. The compliance reporting and data retention policies add complexity, though the lower priority suggests this can be implemented later in the project."
+    },
+    {
+      "taskId": 13,
+      "taskTitle": "Implement advanced AI capabilities",
+      "complexityScore": 8,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down advanced AI capabilities into subtasks covering AI service layer extensions, task extraction implementation, context-aware responses, automated summarization, and user feedback mechanisms.",
+      "reasoning": "Advanced AI features require sophisticated natural language processing and context management. The complexity comes from ensuring accurate task extraction, maintaining conversation context, and implementing effective feedback loops for improvement."
+    },
+    {
+      "taskId": 14,
+      "taskTitle": "Develop analytics and insights system",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Create subtasks for analytics system development focusing on tracking implementation, database models and APIs, dashboard creation, report generation, and performance monitoring with alerts.",
+      "reasoning": "This task involves collecting, processing, and visualizing large amounts of data. The complexity lies in implementing efficient data collection that doesn't impact system performance, along with creating meaningful visualizations and reports."
+    },
+    {
+      "taskId": 15,
+      "taskTitle": "Implement custom integrations framework",
+      "complexityScore": 8,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Divide the integrations framework task into subtasks covering API gateway creation, webhook system, plugin architecture, developer documentation, and OAuth implementation with integration directory.",
+      "reasoning": "Creating an extensible integration framework requires careful API design and security considerations. The plugin architecture and OAuth implementation add significant complexity, as they need to be both flexible and secure while maintaining system stability."
+    }
+  ]
+}

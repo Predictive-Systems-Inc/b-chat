@@ -1,5 +1,5 @@
+import type { UIMessage } from 'ai';
 import {
-  UIMessage,
   appendResponseMessages,
   createDataStreamResponse,
   smoothStream,
@@ -159,8 +159,9 @@ export async function POST(request: Request) {
       },
     });
   } catch (error) {
+    console.error('Error in chat API:', error);
     return new Response('An error occurred while processing your request!', {
-      status: 404,
+      status: 500,
     });
   }
 }

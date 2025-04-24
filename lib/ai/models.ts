@@ -8,13 +8,28 @@ interface ChatModel {
 
 export const chatModels: Array<ChatModel> = [
   {
+    id: 'gpt-4o',
+    name: 'GPT-4o',
+    description: 'Advanced GPT-4 model with enhanced capabilities',
+  },
+  {
     id: 'chat-model',
-    name: 'Chat model',
-    description: 'Primary model for all-purpose chat',
+    name: 'GPT-4 Turbo',
+    description: 'Unlimited chat capabilities for everyday use',
+  },
+  {
+    id: 'gemini-pro',
+    name: 'Gemini Pro',
+    description: "Google's advanced AI model for enterprise solutions",
+  },
+  {
+    id: 'xai-chat-model',
+    name: 'XAI Model',
+    description: 'Using XAI Grok for chat capabilities',
   },
   {
     id: 'chat-model-reasoning',
     name: 'Reasoning model',
-    description: 'Uses advanced reasoning',
+    description: 'Uses advanced reasoning with step-by-step thinking',
   },
 ];

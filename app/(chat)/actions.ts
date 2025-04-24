@@ -1,6 +1,7 @@
 'use server';
 
-import { generateText, Message } from 'ai';
+import type { Message } from 'ai';
+import { generateText } from 'ai';
 import { cookies } from 'next/headers';
 
 import {
@@ -35,7 +36,13 @@ export async function generateTitleFromUserMessage({
 }
 
 export async function deleteTrailingMessages({ id }: { id: string }) {
-  const [message] = await getMessageById({ id });
+  const messages = await getMessageById({ id });
+
+  if (!messages || messages.length === 0) {
+    throw new Error('Message not found');
+  }
+
+  const message = messages[0];
 
   await deleteMessagesByChatIdAfterTimestamp({
     chatId: message.chatId,

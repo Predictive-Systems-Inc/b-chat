@@ -22,7 +22,8 @@ import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
 import { SuggestedActions } from './suggested-actions';
 import equal from 'fast-deep-equal';
-import { UseChatHelpers } from '@ai-sdk/react';
+import type { UseChatHelpers } from '@ai-sdk/react';
+import { ModelSelector } from './model-selector';
 
 function PureMultimodalInput({
   chatId,
@@ -37,6 +38,8 @@ function PureMultimodalInput({
   append,
   handleSubmit,
   className,
+  isReadonly,
+  selectedChatModel,
 }: {
   chatId: string;
   input: UseChatHelpers['input'];
@@ -50,6 +53,8 @@ function PureMultimodalInput({
   append: UseChatHelpers['append'];
   handleSubmit: UseChatHelpers['handleSubmit'];
   className?: string;
+  isReadonly?: boolean;
+  selectedChatModel: string;
 }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const { width } = useWindowSize();
@@ -226,7 +231,7 @@ function PureMultimodalInput({
         value={input}
         onChange={handleInput}
         className={cx(
-          'min-h-[24px] max-h-[calc(75dvh)] overflow-hidden resize-none rounded-2xl !text-base bg-muted pb-10 dark:border-zinc-700',
+          'min-h-[32px] max-h-[calc(85dvh)] overflow-hidden resize-none rounded-xl !text-base bg-muted pb-10 dark:border-zinc-700',
           className,
         )}
         rows={2}
@@ -250,6 +255,13 @@ function PureMultimodalInput({
 
       <div className="absolute bottom-0 p-2 w-fit flex flex-row justify-start">
         <AttachmentsButton fileInputRef={fileInputRef} status={status} />
+
+        {!isReadonly && (
+          <ModelSelector
+            selectedModelId={selectedChatModel}
+            className="mx-auto"
+          />
+        )}
       </div>
 
       <div className="absolute bottom-0 right-0 p-2 w-fit flex flex-row justify-end">

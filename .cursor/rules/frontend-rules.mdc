@@ -1,0 +1,71 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Frontend coding standards
+globs: ./src/app/(auth)/**, ./src/app/(private)/**, ./src/app/(public)/**,  ./src/components/**, *.css, *.tsx
+alwaysApply: false
+---
+## Frontend Practices
+
+### Component Architecture
+- Follow **Atomic Design Principles** (Atoms, Molecules, Organisms).
+- Keep components **small and focused on a single responsibility**.
+- Extract reusable logic into **custom hooks**.
+- Maintain a **clear component hierarchy**.
+
+### State Management
+- **Prefer Server Components** over Client Components when possible.
+- Use **Zustand** for client-side state management.
+- Implement **proper loading and error states** for data fetching.
+- Keep state management **simple and predictable**.
+
+### Form Implementation
+- Use **React Hook Form** for form management.
+- Implement **form validation with Zod**.
+- Handle form submission states (**loading, success, error**).
+- Provide **clear user feedback** for form interactions.
+
+### Performance Optimization
+- Use **memoization (useMemo, useCallback)** where necessary.
+- Optimize images using **next/image**.
+- Implement **code splitting and lazy loading**.
+- Minimize **bundle size** and unnecessary re-renders.
+
+### Error Handling
+- Always use **try-catch** blocks for async operations.
+- Provide **meaningful error messages**.
+- Handle **edge cases and unexpected data**.
+
+### Security
+- Implement **proper authentication checks**.
+- Sanitize **user inputs**.
+- Use **CSRF protection** where applicable.
+- Never expose **sensitive information** in client-side code.
+- Follow best practices for **data handling and storage**.
+
+### Accessibility Requirements
+- Follow **WCAG 2.1 guidelines**.
+- Implement **proper keyboard navigation**.
+- Use **semantic HTML elements**.
+- Ensure **color contrast and ARIA labels**.
+- Support **screen readers** and focus management.
+
+### Coding Environment
+- The project uses:
+  - **Next.js 15 (App Router)**
+  - **React.js**
+  - **TypeScript**
+  - **TailwindCSS**
+  - **ShadCN**
+  - **Prisma**
+  - **Zustand** (State Management)
+
+### Additional Guidelines
+- Use **early returns** for cleaner code.
+- Always use **Tailwind classes** for styling.
+- Use **descriptive variable names**.
+- Ensure all interactive elements are **accessible**.
+- Remove **unused imports** before committing.

@@ -1,0 +1,40 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Backend Coding Standards
+globs: ./src/app/api/**
+alwaysApply: false
+---
+
+### API Development
+- Use **API route handlers** in the `app/api` directory.
+- Implement **proper API error handling**.
+- Use correct **HTTP methods and status codes**.
+- Implement **request validation and rate limiting**.
+
+### Error Handling
+- Always use **try-catch** blocks for async operations.
+- Provide **meaningful error messages**.
+- Handle **edge cases and unexpected data**.
+
+### Security
+- Implement **proper authentication checks**.
+- Sanitize **user inputs**.
+- Use **CSRF protection** where applicable.
+- Never expose **sensitive information** in client-side code.
+- Follow best practices for **data handling and storage**.
+
+### Testing Requirements
+- Write **unit tests** for utility functions.
+- Write **integration tests** for critical user flows.
+- Implement **test coverage** for components.
+- Test **error scenarios and edge cases**.
+
+### Documentation Standards
+- Add **JSDoc comments** for complex functions.
+- Document **component props using TypeScript interfaces**.
+- Provide **usage examples** for reusable components.
+- Keep documentation **up to date**.

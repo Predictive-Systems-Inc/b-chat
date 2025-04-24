@@ -1,0 +1,21 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Global coding standards 
+globs: 
+alwaysApply: true
+---
+## 1. Global Standards
+- Follow best practices for code structure and organization.
+- Prioritize readability over raw performance.
+- Use DRY (Don't Repeat Yourself) principles.
+- Ensure all code is complete, tested, and production-ready.
+- Avoid TODOs and unfinished features.
+- Provide meaningful comments and documentation.
+- Implement accessibility (WCAG 2.1) and security best practices.
+- Follow a consistent file/folder structure.
+- Maintain clear separation of concerns.
+- Use strict TypeScript configurations and avoid using 'any' type.
